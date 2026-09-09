@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Le Huu Luan — Fullstack Developer portfolio" />
+  <link rel="icon" type="image/png" href="assets/site-icon.png" />
+  <link rel="apple-touch-icon" href="assets/site-icon.png" />
   <title>Le Huu Luan — Fullstack Developer</title>
 
   <style>
@@ -160,7 +162,10 @@
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       font-size: 12px;
       box-shadow: 0 10px 24px rgba(36,86,74,.16);
+      object-fit: cover;
     }
+
+    img.brand-mark { padding: 0; }
 
     .nav-links {
       display: flex;
@@ -1118,6 +1123,80 @@
       .credential-block { padding: 24px 26px; }
       .contact-main { padding: 32px 28px; }
     }
+
+    /* Keep every layout on the same centered content axis. */
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
+
+    .container.nav {
+      width: 100%;
+      max-width: none;
+      margin-inline: 0;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        justify-items: center;
+      }
+
+      .hero > .reveal:first-child {
+        width: 100%;
+      }
+
+      .hero-copy,
+      .hero-facts {
+        max-width: 100%;
+      }
+
+      .portrait-wrap {
+        width: min(100%, 420px);
+        margin-inline: auto;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container,
+      .container.nav { width: 100%; }
+
+      .hero {
+        text-align: center;
+      }
+
+      .eyebrow,
+      .hero-actions,
+      .hero-meta {
+        justify-content: center;
+      }
+
+      .eyebrow {
+        margin-inline: auto;
+      }
+
+      .hero-facts {
+        width: 100%;
+        margin-inline: auto;
+      }
+
+      .section-head {
+        text-align: center;
+      }
+
+      .section-head::after {
+        margin-inline: auto;
+      }
+
+      .meta-row {
+        grid-template-columns: minmax(96px, .42fr) minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .footer-row {
+        justify-content: center;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1130,7 +1209,7 @@
 <header class="site-header">
   <div class="container nav">
     <a href="#top" class="brand">
-      <span class="brand-mark">LL</span>
+      <img class="brand-mark" src="assets/site-icon.png" alt="Le Huu Luan logo" />
       <span>Le Huu Luan</span>
     </a>
 
